@@ -1,0 +1,97 @@
+/*
+
+Zakladni syntaxe CSS
+
+selector {
+    vlastnost-1: hodnota (left; right; center; 30px);
+    vlastnost-2: hodnota;
+    vlastnost-3: hodnota;
+    vlastnost-4: hodnota;
+    ...
+    vlastnost-n: hodnota;
+
+}
+
+*/
+
+body {
+    background-color: #cac8c8;
+    font-family: Arial, Helvetica, sans-serif;
+    /* sans-serif - bezpatkovy font - vhodny pro weby, nadpisy a prezentace
+       serif - patkovy font vhodny pro knihy a dlouhe texty, maji patku */
+}
+
+h1 {
+    font-size: 36px;
+    margin: unset;
+}
+
+h1, h2 {
+    color: brown;
+}
+
+header, footer {
+    background-color: #35b0fc;
+    /* 1rem = vetsinou 16px*/
+    padding: 1rem;
+    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 1.5rem 2rem;
+}
+
+footer p {
+    margin: unset;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 0.5rem;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: block;
+    background-color: #59bfff;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    white-space: nowrap;
+
+}
+
+nav li {
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
+    /* flex-basis: 100px; */
+    /* to same jako predchozi 3 vlastnosti */
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.page-wrapper {
+    width: 90%;
+    
+    /* zarovnani na stred */
+    margin: 0 auto;
+}
+
+.grid-container {
+    display: grid;
+    gap: 1rem;
+    /* grid-template-columns: auto auto auto;  */
+    /* grid-template-columns: 2fr 4fr 4fr 2fr;  */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+}
+
+.card {
+    background-color: #e3e3e3;
+    padding: 1rem;
+    /*margin: 0.5rem;*/
+    border-radius: 16px 32px;
+    border: 2px solid rgb(164, 164, 164);
+}
