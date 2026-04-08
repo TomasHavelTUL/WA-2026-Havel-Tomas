@@ -3,36 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Přidat knihu</title>
 </head>
-<body>
-    <header>
-        <h1>Aplikace Knihovna</h1>
-        <nav>
-            <ul>
-                <li><a href="/WA-2026-Havel-Tomas/BooksApp/public/index.php">Seznam knih (Domů)</a></li>
-                <li><a href="/WA-2026-Havel-Tomas/BooksApp/public/index.php?url=book/create">Přidat novou knihu</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>Přidat novou knihu</h2>
-        <form method="POST" action="/WA-2026-Havel-Tomas/BooksApp/public/index.php?url=book/store">
-            <label>Název: <input type="text" name="title" required></label><br><br>
-            <label>Autor: <input type="text" name="author" required></label><br><br>
-            <label>Kategorie: <input type="text" name="category"></label><br><br>
-            <label>Podkategorie: <input type="text" name="subcategory"></label><br><br>
-            <label>Rok: <input type="number" name="year" min="1000" max="2100"></label><br><br>
-            <label>Cena: <input type="number" step="0.01" name="price"></label><br><br>
-            <label>ISBN: <input type="text" name="isbn"></label><br><br>
-            <label>Popis: <textarea name="description"></textarea></label><br><br>
-            <label>Odkaz: <input type="text" name="link"></label><br><br>
-            <label>Obrázek (URL): <input type="text" name="images"></label><br><br>
-            <button type="submit">Uložit knihu</button>
-        </form>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen py-8">
+    
+    <main class="max-w-2xl mx-auto px-4">
+        
+        <div class="mb-6">
+            <a href="<?= BASE_URL ?>/index.php" class="text-blue-600 hover:text-blue-800 font-medium flex items-center gap-2 text-sm">
+                &larr; Zpět na seznam knih
+            </a>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+            <div class="p-6 border-b border-slate-100 bg-blue-50/50">
+                <h2 class="text-2xl font-bold text-slate-800">Přidat novou knihu</h2>
+                <p class="text-slate-600 mt-1 text-sm">Vyplňte údaje a uložte knihu do databáze. Pole označená * jsou povinná.</p>
+            </div>
+            
+            <form action="<?= BASE_URL ?>/index.php?url=book/store" method="post" enctype="multipart/form-data" class="p-6 space-y-5">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="sm:col-span-2">
+                        <label for="title" class="block text-sm font-medium text-slate-700 mb-1">Název knihy <span class="text-red-500">*</span></label>
+                        <input type="text" id="title" name="title" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+
+                    <div>
+                        <label for="author" class="block text-sm font-medium text-slate-700 mb-1">Autor <span class="text-red-500">*</span></label>
+                        <input type="text" id="author" name="author" placeholder="Příjmení Jméno" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+
+                    <div>
+                        <label for="isbn" class="block text-sm font-medium text-slate-700 mb-1">ISBN <span class="text-red-500">*</span></label>
+                        <input type="text" id="isbn" name="isbn" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+
+                    <div>
+                        <label for="category" class="block text-sm font-medium text-slate-700 mb-1">Kategorie</label>
+                        <input type="text" id="category" name="category" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+
+                    <div>
+                        <label for="subcategory" class="block text-sm font-medium text-slate-700 mb-1">Podkategorie</label>
+                        <input type="text" id="subcategory" name="subcategory" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+
+                    <div>
+                        <label for="year" class="block text-sm font-medium text-slate-700 mb-1">Rok vydání <span class="text-red-500">*</span></label>
+                        <input type="number" id="year" name="year" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+
+                    <div>
+                        <label for="price" class="block text-sm font-medium text-slate-700 mb-1">Cena knihy (Kč)</label>
+                        <input type="number" id="price" name="price" step="0.5" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        <label for="link" class="block text-sm font-medium text-slate-700 mb-1">Odkaz</label>
+                        <input type="text" id="link" name="link" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        <label for="description" class="block text-sm font-medium text-slate-700 mb-1">Popis knihy</label>
+                        <textarea id="description" name="description" rows="4" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
+                    </div>    
+
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Obrázky (můžete nahrát více)</label>
+                        <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-slate-300 border-dashed rounded-lg cursor-pointer bg-slate-50 hover:bg-slate-100 transition">
+                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                <span class="text-blue-600 font-semibold mb-1">Klikni pro výběr souborů</span>
+                                <span class="text-xs text-slate-500">JPG / PNG / WebP – více souborů najednou</span>
+                            </div>
+                            <input type="file" id="images" name="images[]" multiple accept="image/*" class="hidden">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-slate-100">
+                    <button type="submit" class="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 transition shadow-md">
+                        Uložit knihu do DB
+                    </button>
+                </div>
+            </form>
+        </div>
     </main>
-    <footer>
-        <p>&copy; WA 2026 - Výukový projekt</p>
-    </footer>
 </body>
 </html>

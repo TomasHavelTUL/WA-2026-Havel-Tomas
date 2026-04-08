@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles/style.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>WA 2026 - Pavel Bulíř</title>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-myPrimaryColor: #da373d;
+        }
+
+        @layer base {
+            h2 {
+                @apply text-2xl mt-4
+            }
+
+            p {
+                @apply text-base font-serif mt-2
+            }
+
+            .card {
+                @apply bg-teal-300 p-5 rounded-2xl
+            }
+
+            nav li {
+                @apply flex-grow basis-full 
+            }
+
+            nav a {
+                @apply
+                    block
+                    bg-teal-700
+                    text-white
+                    rounded-md
+                    p-1
+                    text-center
+                    no-underline
+                    whitespace-nowrap
+                    hover:bg-teal-800
+            }
+
+        }
+
+        
+    </style>
+</head>
+<body class="bg-teal-500 text-black-100">
+    <div class="page-wrapper w-[95%] mx-auto lg:w-[80%]">
+        <header class="bg-myPrimaryColor p-4">
+            <h1 class="text-3xl">WA 2026 - první web</h1>
+        </header>
+        <nav class=" my-4">
+            <ul class="flex gap-3 list-none p-0">
+                <li><a href="index.html">Úvod</a></li>
+                <li><a href="#">O nás</a></li>
+                <li><a href="#">Kontakt</a></li>
+                <li><a href="https://www.w3schools.com">Web W3 Schools</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section class="grid-container grid gap-2 grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
+                <article class="card">
+                    <h2>Nadpis článku 1</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eveniet necessitatibus laudantium, voluptate doloribus tenetur quis magni dolore recusandae similique inventore odit eum, voluptas, ad modi. Porro laudantium tempora voluptates.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, quis consectetur at et ducimus repudiandae amet, necessitatibus eius ratione nam dolorum placeat tenetur ipsum aspernatur, ex enim. Ut, vel ullam?</p>
+                </article>
+                <article class="card">
+                    <h2>Nadpis článku 2</h2>
+                    <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit.</b> Unde nostrum veniam vel dicta repellendus quae ipsam explicabo iure itaque eius nisi, laboriosam deleniti, voluptates, eos perspiciatis recusandae optio tenetur maiores.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati necessitatibus aliquam quam ratione! Excepturi animi aperiam doloribus, dicta qui numquam repudiandae facilis modi ab quaerat, suscipit sit placeat laudantium ratione.</p>
+                </article>
+                <article class="card">
+                    <h2>Nadpis článku 3</h2>
+                    <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong> Officia quod ut ratione, ab voluptates repellendus exercitationem omnis distinctio, dolore rerum dicta illum quos tempore earum repellat ipsam. Amet, tenetur repellat!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id numquam, exercitationem quas eveniet tempore vitae esse maxime vero autem repudiandae dolores possimus laudantium quo ducimus ab quisquam itaque labore soluta?</p>
+                </article>
+                <article class="card">
+                    <h2>Nadpis článku 4</h2>
+                    <p><i>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</i> Culpa ipsum mollitia sunt reiciendis, accusantium, enim corrupti odit, sit ea magni doloremque! Voluptatibus ullam provident magnam adipisci atque. Reprehenderit, expedita tempora?</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda ab necessitatibus odio repudiandae blanditiis illum ex impedit eaque, repellat deserunt cumque atque expedita consequuntur vero aliquam qui officia a dolore.</p>
+                </article>
+                <article class="card">
+                    <h2>Nadpis článku 5</h2>
+                    <p><em>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</em> Adipisci exercitationem aspernatur, amet, doloribus quaerat dolores aut optio molestiae itaque voluptate, libero beatae. Delectus ullam molestias laborum provident obcaecati voluptatum ab.</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore repudiandae, odit possimus veniam adipisci facere ut architecto distinctio doloremque corporis dolorem aliquam, praesentium explicabo, voluptate animi hic magnam. Quasi.</p>
+                </article>
+                <article class="card">
+                    <h2>Nadpis článku 6</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque harum in recusandae eaque aliquam, laborum quam. Corporis rerum sit, quos blanditiis mollitia dolor? Illo neque reprehenderit exercitationem in blanditiis. Voluptas!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga deserunt omnis atque expedita dolores. Earum ipsum, doloribus ea temporibus omnis doloremque cupiditate recusandae, optio sapiente eum tempore delectus fugit distinctio?</p>
+                </article>
+            </section>
+        </main>
+
+        
+
+        <footer class="bg-myPrimaryColor p-4">
+            <p>&copy;WA&nbsp;2026 - Pavel Bulíř</p>
+        </footer>
+    </div>
+</body>
+</html>
