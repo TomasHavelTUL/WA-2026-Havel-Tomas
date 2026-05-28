@@ -72,7 +72,7 @@ class ClanwarController {
     public function store(): void {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             $this->addNoticeMessage('Neplatný požadavek.');
-            header('Location: ' . BASE_URL . '/index.php');
+            header('Location: ' . BASE_URL . '/index.php'); //<<<<<
             exit;
         }
 

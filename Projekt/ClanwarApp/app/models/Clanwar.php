@@ -40,7 +40,7 @@ class Clanwar {
         string $teamSize,
         array  $team1Players,
         array  $team2Players,
-        int    $round1Team1, int $round1Team2,
+        int    $rund1Toeam1, int $round1Team2,
         int    $round2Team1, int $round2Team2,
         int    $round3Team1, int $round3Team2,
         string $winner,

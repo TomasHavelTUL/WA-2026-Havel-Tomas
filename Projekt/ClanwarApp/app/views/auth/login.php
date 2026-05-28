@@ -5,7 +5,7 @@
     <div class="w-full max-w-md">
 
         <div class="text-center mb-8">
-            <h2 class="font-orbitron font-black text-3xl tracking-widest glow-text mb-2">PŘIHLÁŠENÍ</h2>
+            <h2 class="font-rajdhani font-black text-3xl tracking-widest glow-text mb-2">PŘIHLÁŠENÍ</h2>
             <p class="font-rajdhani text-sm tracking-wider" style="color:var(--ice-muted);">Vítejte zpět v FSC ClanWar Trackeru</p>
         </div>
 

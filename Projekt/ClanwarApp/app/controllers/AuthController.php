@@ -40,7 +40,7 @@ class AuthController {
                 exit;
             }
 
-            if (strlen($password) < 8 || !preg_match('/\d/', $password)) {
+            if (strlen($password) < 8 || !preg_match('/\d/', $password)) {      //jestli je v password decimal
                 $this->addErrorMessage('Heslo musí mít alespoň 8 znaků a obsahovat alespoň 1 číslo.');
                 header('Location: ' . BASE_URL . '/index.php?url=auth/register');
                 exit;
